@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================================================
+   Web Font Declarations: 강원교육모두체, Pretendard, Gowun Batang, Gowun Dodum
+   ======================================================== */
+@import url('https://cdn.jsdelivr.net/gh/fonts-archive/GangwonEduModu/GangwonEduModu.css');
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&family=Noto+Sans+KR:wght@400;500;700&display=swap');
+
+/* GangwonEduModu Web Font via CDN */
+@import url('https://fastly.jsdelivr.net/npm/gangwon-edu-modu@1.0.0/style.css');
+
+:root {
+  --foreground-rgb: 31, 41, 55;
+  --background-start-rgb: 250, 245, 247;
+  --background-end-rgb: 245, 247, 250;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: radial-gradient(circle at 50% 0%, #FAF5F7 0%, #F5F7FA 100%);
+  min-height: 100vh;
+  font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+  overflow-x: hidden;
+  word-break: keep-all;
+  letter-spacing: -0.02em;
+}
+
+/* 제목 및 강조 헤더 */
+.font-title {
+  font-family: 'GangwonEduModu', 'Pretendard', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.font-badge {
+  font-family: 'GangwonEduModu', 'Pretendard', sans-serif;
+  font-weight: 700;
+}
+
+/* 서정 소설 및 깊은 감정 일기: 고운바탕 (Gowun Batang) */
+.font-novel, .font-batang {
+  font-family: 'Gowun Batang', 'Pretendard', serif;
+  line-height: 1.8;
+  letter-spacing: -0.01em;
+}
+
+/* 안내문 및 따뜻한 문장: 고운돋움 (Gowun Dodum) */
+.font-hand, .font-dodum {
+  font-family: 'Gowun Dodum', 'Pretendard', sans-serif;
+  line-height: 1.65;
+  letter-spacing: -0.015em;
+}
+
+/* ========================================================
+   Ticket Punch & Cutout Styles (#해시태그로 말해요 티켓)
+   ======================================================== */
+.ticket-card {
+  position: relative;
+  background: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px -2px rgba(42, 120, 75, 0.08), 0 2px 8px -2px rgba(0, 0, 0, 0.04);
+  border: 1.5px dashed #A5D6B6;
+}
+
+.ticket-punch-left {
+  position: absolute;
+  top: 50%;
+  left: -12px;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  background-color: #FAF5F7;
+  border-radius: 50%;
+  border-right: 1.5px dashed #A5D6B6;
+  z-index: 10;
+}
+
+.ticket-punch-right {
+  position: absolute;
+  top: 50%;
+  right: -12px;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  background-color: #FAF5F7;
+  border-radius: 50%;
+  border-left: 1.5px dashed #A5D6B6;
+  z-index: 10;
+}
+
+/* ========================================================
+   Print & A4 Exhibition Portfolio Optimization
+   ======================================================== */
+@page {
+  size: A4 portrait;
+  margin: 10mm;
+}
+
+@media print {
+  body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    font-size: 11pt;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .no-print,
+  header,
+  footer,
+  nav {
+    display: none !important;
+  }
+
+  .a4-page {
+    width: 100% !important;
+    min-height: 275mm !important;
+    margin: 0 0 10mm 0 !important;
+    padding: 8mm !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    border: none !important;
+    box-shadow: none !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .a4-page:last-child {
+    page-break-after: auto !important;
+    break-after: auto !important;
+  }
+}
+
+.a4-page {
+  width: 210mm;
+  min-height: 297mm;
+  background: #FFFFFF;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(240, 240, 240, 0.6);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #A5D6B6;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2A784B;
+}
